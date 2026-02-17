@@ -1,0 +1,161 @@
+/* ===== Reset ===== */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Arial, sans-serif;
+}
+
+/* ===== Body Background ===== */
+body {
+    height: 100vh;
+    background:
+        linear-gradient(rgba(0, 0, 0, 0.45), rgba(0, 0, 0, 0.45)),
+        url("background.jpg") no-repeat center center/cover;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    animation: bgMove 18s infinite alternate;
+}
+
+/* ===== Background Animation ===== */
+@keyframes bgMove {
+    0% {
+        background-position: center;
+    }
+    100% {
+        background-position: top;
+    }
+}
+
+/* ===== App Container ===== */
+.app-container {
+    background: rgba(186, 185, 185, 0.92);
+    padding: 25px;
+    border-radius: 14px;
+    width: 320px;
+    text-align: center;
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.35);
+    animation: fadeSlide 0.7s ease-in-out;
+}
+
+/* ===== Title ===== */
+h1 {
+    margin-bottom: 20px;
+    color: #333;
+}
+
+/* ===== Input Section ===== */
+.input-box {
+    display: flex;
+    gap: 10px;
+}
+
+input {
+    flex: 1;
+    padding: 10px;
+    border-radius: 6px;
+    border: 1px solid #f1eded;
+    font-size: 14px;
+    transition: 0.3s;
+}
+
+input:focus {
+    outline: none;
+    border-color: #4facfe;
+    animation: pulse 0.6s;
+}
+
+/* ===== Button ===== */
+button {
+    padding: 10px 15px;
+    border: none;
+    background: linear-gradient(to right, #6ab5f6, #00c6ff);
+    color: white;
+    border-radius: 6px;
+    cursor: pointer;
+    font-size: 14px;
+    transition: 0.3s;
+}
+
+button:hover {
+    transform: scale(1.08);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+}
+
+/* ===== Weather Box ===== */
+.weather-box {
+    margin-top: 20px;
+    animation: fadeSlide 0.6s ease-in-out;
+}
+
+/* ===== Weather Icon ===== */
+.weather-box img {
+    width: 80px;
+    margin: 10px 0;
+    animation: bounce 2s infinite;
+}
+
+/* ===== Text ===== */
+#temperature,
+#description {
+    font-size: 16px;
+    color: #444;
+}
+
+#cityName {
+    font-size: 20px;
+    font-weight: bold;
+    color: #222;
+}
+
+/* ===== Loading & Error ===== */
+#loading {
+    color: #555;
+    font-size: 14px;
+}
+
+.error {
+    color: red;
+    font-size: 14px;
+}
+
+/* ===== Animations ===== */
+@keyframes fadeSlide {
+    from {
+        opacity: 0;
+        transform: translateY(25px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes bounce {
+    0%, 100% {
+        transform: translateY(0);
+    }
+    50% {
+        transform: translateY(-10px);
+    }
+}
+
+@keyframes pulse {
+    0% {
+        transform: scale(1);
+    }
+    50% {
+        transform: scale(1.05);
+    }
+    100% {
+        transform: scale(1);
+    }
+}
+
+/* ===== Responsive ===== */
+@media (max-width: 480px) {
+    .app-container {
+        width: 90%;
+    }
+}
